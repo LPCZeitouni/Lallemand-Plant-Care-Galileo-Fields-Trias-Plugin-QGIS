@@ -1,0 +1,29 @@
+<RCC>
+    <qresource prefix="/plugins/lallemand_plant_care" >
+        <file>icons/lallemand.png</file>
+        <file>icons/new_experiment.png</file>
+        <file>icons/upload_file.png</file>
+        <file>icons/report.png</file>
+        <file>icons/settings.png</file>
+        <file>icons/manage_accounts.png</file>
+        <file>icons/user.png</file>
+        <file>icons/farmer.png</file>
+        <file>icons/delete.png</file>
+        <file>icons/edit.png</file>
+        <file>icons/save.png</file>
+        <file>icons/filter.png</file>
+        <file>icons/polygons.png</file>
+        <file>icons/kriging.png</file>
+        <file>icons/folder_tree.png</file>
+        <file>icons/verified.png</file>
+        <file>icons/maps.png</file>
+        <file>icons/export_layout.png</file>
+        <file>icons/load_layout.png</file>
+        <file>icons/sample.png</file>
+        <file>icons/dropper.png</file>
+        <file>icons/error_compensation.png</file>
+        <file>icons/gain_surface.png</file>
+        <file>icons/doc.png</file>
+        <file>icons/ppt.png</file>
+    </qresource>
+</RCC>
