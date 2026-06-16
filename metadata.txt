@@ -1,0 +1,23 @@
+[general]
+name=Lallemand Geostat Field Trial Treatments
+qgisMinimumVersion=3.22
+description=QGIS plugin for processing strip trial data in large fields using advanced geostatistical methods and R integration
+version=0.1
+author=Olivier Cor
+email=ocor@lallemand.com
+
+about=This plugin provides advanced tools for agronomic field trial analysis based on strip trial protocols. It integrates geostatistical models (including kriging) with R processing to automate workflows from raw data to final reports in Word and PowerPoint.
+
+tracker=https://github.com/LPCZeitouni/Lallemand-Plant-Care-Galileo-Fields-Trias-Plugin-QGIS/issues
+repository=https://github.com/LPCZeitouni/Lallemand-Plant-Care-Galileo-Fields-Trias-Plugin-QGIS
+homepage=https://github.com/LPCZeitouni/Lallemand-Plant-Care-Galileo-Fields-Trias-Plugin-QGIS
+
+tags=agronomy, geostatistics, kriging, field trials, R, strip trials
+category=Plugins
+icon=icons/icon.png
+
+experimental=True
+deprecated=False
+
+hasProcessingProvider=no
+server=False
