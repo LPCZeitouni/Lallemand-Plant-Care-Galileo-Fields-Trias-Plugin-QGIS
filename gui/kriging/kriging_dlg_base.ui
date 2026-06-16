@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>550</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>550</width>
+    <height>400</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="kriging">
+      <attribute name="title">
+       <string>Kriging</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="parametersGroupBox">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>90</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="title">
+          <string>Parameters</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <property name="spacing">
+           <number>5</number>
+          </property>
+          <property name="leftMargin">
+           <number>10</number>
+          </property>
+          <property name="topMargin">
+           <number>10</number>
+          </property>
+          <property name="rightMargin">
+           <number>10</number>
+          </property>
+          <property name="bottomMargin">
+           <number>10</number>
+          </property>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout">
+            <property name="spacing">
+             <number>5</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout">
+              <property name="spacing">
+               <number>5</number>
+              </property>
+              <property name="leftMargin">
+               <number>5</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="layerLabel">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>13</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>MS Shell Dlg 2</family>
+                  <pointsize>8</pointsize>
+                  <weight>50</weight>
+                  <italic>false</italic>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;</string>
+                </property>
+                <property name="text">
+                 <string>Sampling layer</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="fieldLabel">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>13</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>MS Shell Dlg 2</family>
+                  <pointsize>8</pointsize>
+                  <weight>50</weight>
+                  <italic>false</italic>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;</string>
+                </property>
+                <property name="text">
+                 <string>Field to interpolate</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_2">
+              <property name="spacing">
+               <number>5</number>
+              </property>
+              <property name="leftMargin">
+               <number>5</number>
+              </property>
+              <item>
+               <widget class="QgsMapLayerComboBox" name="samplingLayerComboBox">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>23</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QgsFieldComboBox" name="samplingFieldComboBox">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>23</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>5</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_2">
+            <property name="spacing">
+             <number>5</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_3">
+              <property name="spacing">
+               <number>5</number>
+              </property>
+              <property name="leftMargin">
+               <number>5</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="pixelSizeXLabel">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>MS Shell Dlg 2</family>
+                  <pointsize>8</pointsize>
+                  <weight>50</weight>
+                  <italic>false</italic>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;</string>
+                </property>
+                <property name="text">
+                 <string>Pixel size X</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="pixelSizeYLabel">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;</string>
+                </property>
+                <property name="text">
+                 <string>Pixel size Y</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_4">
+              <property name="spacing">
+               <number>5</number>
+              </property>
+              <property name="leftMargin">
+               <number>5</number>
+              </property>
+              <item>
+               <widget class="QDoubleSpinBox" name="pixelSizeXSpinBox">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;</string>
+                </property>
+                <property name="decimals">
+                 <number>4</number>
+                </property>
+                <property name="maximum">
+                 <double>999.990000000000009</double>
+                </property>
+                <property name="singleStep">
+                 <double>0.100000000000000</double>
+                </property>
+                <property name="value">
+                 <double>1.500000000000000</double>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="pixelSizeYSpinBox">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;</string>
+                </property>
+                <property name="decimals">
+                 <number>4</number>
+                </property>
+                <property name="minimum">
+                 <double>0.000000000000000</double>
+                </property>
+                <property name="maximum">
+                 <double>999.990000000000009</double>
+                </property>
+                <property name="singleStep">
+                 <double>0.100000000000000</double>
+                </property>
+                <property name="value">
+                 <double>1.500000000000000</double>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>5</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_4">
+            <property name="spacing">
+             <number>5</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_5">
+              <property name="spacing">
+               <number>5</number>
+              </property>
+              <property name="leftMargin">
+               <number>5</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="outlinePolygonLabel">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;</string>
+                </property>
+                <property name="text">
+                 <string>Outline polygon</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_6">
+              <property name="spacing">
+               <number>5</number>
+              </property>
+              <property name="leftMargin">
+               <number>5</number>
+              </property>
+              <item>
+               <widget class="QgsMapLayerComboBox" name="boundaryLayerComboBox">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>23</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <spacer name="verticalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="3" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_13">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <item>
+          <spacer name="horizontalSpacer_9">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="interpolatePushButton">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>23</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>28</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+           </property>
+           <property name="text">
+            <string>Interpolate</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QgsFieldComboBox</class>
+   <extends>QComboBox</extends>
+   <header>qgsfieldcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QgsMapLayerComboBox</class>
+   <extends>QComboBox</extends>
+   <header>qgsmaplayercombobox.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>samplingLayerComboBox</tabstop>
+  <tabstop>samplingFieldComboBox</tabstop>
+  <tabstop>pixelSizeXSpinBox</tabstop>
+  <tabstop>pixelSizeYSpinBox</tabstop>
+  <tabstop>boundaryLayerComboBox</tabstop>
+  <tabstop>interpolatePushButton</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,1848 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>923</width>
+    <height>760</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="2" column="0">
+    <widget class="QgsCollapsibleGroupBox" name="mGroupBox_3">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="title">
+      <string>Kriging parameters</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <property name="spacing">
+       <number>5</number>
+      </property>
+      <property name="leftMargin">
+       <number>10</number>
+      </property>
+      <property name="topMargin">
+       <number>10</number>
+      </property>
+      <property name="rightMargin">
+       <number>10</number>
+      </property>
+      <property name="bottomMargin">
+       <number>10</number>
+      </property>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_6">
+        <property name="spacing">
+         <number>3</number>
+        </property>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_15">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="fieldToInterpolateLabel">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>Field to interpolate</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_15">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>30</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="fieldToInterpolateLineEdit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>165</width>
+              <height>18</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_16">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_16">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="pixelSizeXLabel">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>Pixel size X</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_17">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>30</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QDoubleSpinBox" name="pixelSizeXSpinBox">
+            <property name="minimumSize">
+             <size>
+              <width>165</width>
+              <height>18</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;</string>
+            </property>
+            <property name="decimals">
+             <number>4</number>
+            </property>
+            <property name="maximum">
+             <double>999.990000000000009</double>
+            </property>
+            <property name="singleStep">
+             <double>0.100000000000000</double>
+            </property>
+            <property name="value">
+             <double>1.500000000000000</double>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_18">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_17">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="pixelSizeYLabel">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>Pixel size Y</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_19">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>30</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QDoubleSpinBox" name="pixelSizeYSpinBox">
+            <property name="minimumSize">
+             <size>
+              <width>165</width>
+              <height>18</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;</string>
+            </property>
+            <property name="decimals">
+             <number>4</number>
+            </property>
+            <property name="minimum">
+             <double>0.000000000000000</double>
+            </property>
+            <property name="maximum">
+             <double>999.990000000000009</double>
+            </property>
+            <property name="singleStep">
+             <double>0.100000000000000</double>
+            </property>
+            <property name="value">
+             <double>1.500000000000000</double>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_20">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QgsCollapsibleGroupBox" name="mGroupBox">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>125</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="title">
+      <string>Database settings</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="spacing">
+       <number>5</number>
+      </property>
+      <property name="leftMargin">
+       <number>10</number>
+      </property>
+      <property name="topMargin">
+       <number>10</number>
+      </property>
+      <property name="rightMargin">
+       <number>10</number>
+      </property>
+      <property name="bottomMargin">
+       <number>10</number>
+      </property>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <property name="spacing">
+         <number>3</number>
+        </property>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_13">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="databaseNameLabel_2">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>Postgres Database</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_6">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>30</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="databaseNameLineEdit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>165</width>
+              <height>18</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_9">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>15</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="serverUserLabel">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>Username</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>30</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="serverUserLineEdit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>165</width>
+              <height>18</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_8">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="serverIpLabel">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>Server IP address</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>30</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="serverIpLineEdit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>165</width>
+              <height>18</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_10">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>15</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="serverPasswordLabel">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>Password</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_5">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>30</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="serverPasswordLineEdit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>165</width>
+              <height>18</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="echoMode">
+             <enum>QLineEdit::Password</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_7">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_9">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="serverPortLabel">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>Port</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>30</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="serverPortLineEdit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>165</width>
+              <height>18</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_8">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_11">
+        <property name="spacing">
+         <number>3</number>
+        </property>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_25">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="databaseNameLabel_3">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>Sqlite Database</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_44">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>30</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QgsFileWidget" name="sqliteFileWidget">
+            <property name="filter">
+             <string>*.sqlite</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_45">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="3" column="0">
+    <widget class="QgsCollapsibleGroupBox" name="mGroupBox_4">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="title">
+      <string>Frequency histograms settings</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_7">
+      <property name="spacing">
+       <number>5</number>
+      </property>
+      <property name="leftMargin">
+       <number>10</number>
+      </property>
+      <property name="topMargin">
+       <number>10</number>
+      </property>
+      <property name="rightMargin">
+       <number>10</number>
+      </property>
+      <property name="bottomMargin">
+       <number>10</number>
+      </property>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_8">
+        <property name="spacing">
+         <number>3</number>
+        </property>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_18">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="binsLabel">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>Bins</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_25">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>30</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="binsSpinBox">
+            <property name="minimumSize">
+             <size>
+              <width>165</width>
+              <height>18</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_26">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_19">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="colorLabel">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>Color</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_27">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>30</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QgsColorButton" name="colorColorButton">
+            <property name="minimumSize">
+             <size>
+              <width>165</width>
+              <height>18</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_28">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_20">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="edgeColorLabel">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>Edge color</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_29">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>30</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QgsColorButton" name="edgeColorButton">
+            <property name="minimumSize">
+             <size>
+              <width>165</width>
+              <height>18</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_30">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QgsCollapsibleGroupBox" name="mGroupBox_2">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="title">
+      <string>Treatment polygons and filtering settings</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="spacing">
+       <number>5</number>
+      </property>
+      <property name="leftMargin">
+       <number>10</number>
+      </property>
+      <property name="topMargin">
+       <number>10</number>
+      </property>
+      <property name="rightMargin">
+       <number>10</number>
+      </property>
+      <property name="bottomMargin">
+       <number>10</number>
+      </property>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_5">
+        <property name="spacing">
+         <number>4</number>
+        </property>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_24">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="methodLabel">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>MS Shell Dlg 2</family>
+              <pointsize>8</pointsize>
+              <weight>50</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;</string>
+            </property>
+            <property name="text">
+             <string>Polygons construction method</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_38">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>30</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="boucleRadioButton">
+            <property name="text">
+             <string>Boucle rang</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_40">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>15</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="ligneRadioButton">
+            <property name="text">
+             <string>Ligne parcelle</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_43">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_14">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="oddPolygonsLabel">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>Odd polygons name</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_11">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>30</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="oddPolygonsNameLineEdit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>165</width>
+              <height>18</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_22">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>15</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="evenPolygonsLabel">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>Even polygons name</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_23">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>30</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="evenPolygonsNameLineEdit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>165</width>
+              <height>18</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_12">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_12">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="sortingLabel_6">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>MS Shell Dlg 2</family>
+              <pointsize>8</pointsize>
+              <weight>50</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;</string>
+            </property>
+            <property name="text">
+             <string>Largeur coupe</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_13">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>30</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QDoubleSpinBox" name="largeurCoupeSpinBox">
+            <property name="minimumSize">
+             <size>
+              <width>165</width>
+              <height>18</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;</string>
+            </property>
+            <property name="decimals">
+             <number>4</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_24">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>15</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_3">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;</string>
+            </property>
+            <property name="text">
+             <string>Sous Echantillonnage</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_21">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>30</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QDoubleSpinBox" name="sousEchantillonnageSpinBox">
+            <property name="minimumSize">
+             <size>
+              <width>165</width>
+              <height>18</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;</string>
+            </property>
+            <property name="decimals">
+             <number>4</number>
+            </property>
+            <property name="minimum">
+             <double>1.000000000000000</double>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_14">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="evenPolygonsLabel_2">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>Border size</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_31">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>30</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QDoubleSpinBox" name="sizeBorderSpinBox">
+            <property name="minimumSize">
+             <size>
+              <width>165</width>
+              <height>18</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;</string>
+            </property>
+            <property name="decimals">
+             <number>4</number>
+            </property>
+            <property name="minimum">
+             <double>0.000000000000000</double>
+            </property>
+            <property name="maximum">
+             <double>1000.000000000000000</double>
+            </property>
+            <property name="value">
+             <double>0.000000000000000</double>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_32">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QgsCollapsibleGroupBox" name="mGroupBox_5">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="title">
+      <string>Simbology settings</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_9">
+      <property name="spacing">
+       <number>5</number>
+      </property>
+      <property name="leftMargin">
+       <number>10</number>
+      </property>
+      <property name="topMargin">
+       <number>10</number>
+      </property>
+      <property name="rightMargin">
+       <number>10</number>
+      </property>
+      <property name="bottomMargin">
+       <number>10</number>
+      </property>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_10">
+        <property name="spacing">
+         <number>3</number>
+        </property>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_21">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="binsLabel_2">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>Number of classes</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_33">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>30</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="classesSpinBox">
+            <property name="minimumSize">
+             <size>
+              <width>165</width>
+              <height>18</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_34">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_22">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="colorLabel_2">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>Color list</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_35">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>30</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QgsColorButton" name="firstColorButton">
+            <property name="minimumSize">
+             <size>
+              <width>165</width>
+              <height>18</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_36">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>15</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QgsColorButton" name="secondColorButton">
+            <property name="minimumSize">
+             <size>
+              <width>165</width>
+              <height>18</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_41">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>15</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QgsColorButton" name="thirdColorButton">
+            <property name="minimumSize">
+             <size>
+              <width>165</width>
+              <height>18</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_42">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>15</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QgsColorButton" name="fourthColorButton">
+            <property name="minimumSize">
+             <size>
+              <width>165</width>
+              <height>18</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_37">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_23">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+           <spacer name="horizontalSpacer_39">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>15</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QgsCollapsibleGroupBox</class>
+   <extends>QGroupBox</extends>
+   <header>qgscollapsiblegroupbox.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>QgsColorButton</class>
+   <extends>QToolButton</extends>
+   <header>qgscolorbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QgsFileWidget</class>
+   <extends>QWidget</extends>
+   <header>qgsfilewidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>mGroupBox</tabstop>
+  <tabstop>databaseNameLineEdit</tabstop>
+  <tabstop>serverIpLineEdit</tabstop>
+  <tabstop>serverPortLineEdit</tabstop>
+  <tabstop>serverUserLineEdit</tabstop>
+  <tabstop>serverPasswordLineEdit</tabstop>
+  <tabstop>mGroupBox_2</tabstop>
+  <tabstop>oddPolygonsNameLineEdit</tabstop>
+  <tabstop>sizeBorderSpinBox</tabstop>
+  <tabstop>sousEchantillonnageSpinBox</tabstop>
+  <tabstop>mGroupBox_3</tabstop>
+  <tabstop>fieldToInterpolateLineEdit</tabstop>
+  <tabstop>pixelSizeXSpinBox</tabstop>
+  <tabstop>pixelSizeYSpinBox</tabstop>
+  <tabstop>mGroupBox_4</tabstop>
+  <tabstop>binsSpinBox</tabstop>
+  <tabstop>colorColorButton</tabstop>
+  <tabstop>edgeColorButton</tabstop>
+  <tabstop>mGroupBox_5</tabstop>
+  <tabstop>classesSpinBox</tabstop>
+  <tabstop>firstColorButton</tabstop>
+  <tabstop>secondColorButton</tabstop>
+  <tabstop>thirdColorButton</tabstop>
+  <tabstop>fourthColorButton</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../../resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
