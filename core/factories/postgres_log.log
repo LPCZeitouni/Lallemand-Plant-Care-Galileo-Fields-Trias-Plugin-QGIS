@@ -1,0 +1,201 @@
+ERROR:root:Error executing SQL: syntax error at or near "'crop_name'"
+LINE 1: INSERT INTO geostatistics.crop_trial ('crop_name', 'sowing_d...
+                                              ^
+
+ERROR:root:Error executing SQL: connection already closed
+ERROR:root:Error executing SQL: connection already closed
+ERROR:root:Error executing SQL: syntax error at or near "'lpc_team'"
+LINE 1: INSERT INTO geostatistics.geostatistic_trial ('lpc_team', 'f...
+                                                      ^
+
+ERROR:root:Error executing SQL: connection already closed
+ERROR:root:Error executing SQL: connection already closed
+ERROR:root:Error executing SQL: column "lpc_team" is of type uuid but expression is of type boolean
+LINE 1: ...ield_irrigation, field_soil, create_date) VALUES (True, Fals...
+                                                             ^
+HINT:  You will need to rewrite or cast the expression.
+
+ERROR:root:Error executing SQL: connection already closed
+ERROR:root:Error executing SQL: connection already closed
+ERROR:root:Error executing SQL: syntax error at or near "["
+LINE 1: ...ield_irrigation, field_soil, create_date) VALUES ([], 'Error...
+                                                             ^
+
+ERROR:root:Error executing SQL: connection already closed
+ERROR:root:Error executing SQL: connection already closed
+ERROR:root:Error executing SQL: syntax error at or near "["
+LINE 1: ...ield_irrigation, field_soil, create_date) VALUES ([('3fcdc19...
+                                                             ^
+
+ERROR:root:Error executing SQL: connection already closed
+ERROR:root:Error executing SQL: connection already closed
+ERROR:root:Error executing SQL: invalid input syntax for type uuid: "Error executing SQL: connection already closed"
+LINE 1: ...) VALUES ('3fcdc194-f1f0-4901-bcf7-f2df7eb5c3b9', 'Error exe...
+                                                             ^
+
+ERROR:root:Error executing SQL: connection already closed
+ERROR:root:Error executing SQL: connection already closed
+ERROR:root:Error executing SQL: syntax error at or near "["
+LINE 1: ...ield_irrigation, field_soil, create_date) VALUES ([('b79fd3b...
+                                                             ^
+
+ERROR:root:Error executing SQL: syntax error at or near "["
+LINE 1: ...) VALUES ('b79fd3bb-5d94-4118-9d97-65970f5df35e', [], [], ''...
+                                                             ^
+
+ERROR:root:Error executing SQL: syntax error at or near "["
+LINE 1: ...) VALUES ('b79fd3bb-5d94-4118-9d97-65970f5df35e', [('d6dd629...
+                                                             ^
+
+ERROR:root:Error executing SQL: connection already closed
+ERROR:root:Error executing SQL: invalid input syntax for type double precision: "d"
+LINE 1: ...e3', 'a64f6eef-8742-4ad9-ac33-2096b814d926', 'd', 'd', 0, 'd...
+                                                             ^
+
+ERROR:root:Error executing SQL: syntax error at or near "ac90f5b9"
+LINE 1: ... update_date = '2023-12-08 15:44:41' WHERE id = ''ac90f5b9-3...
+                                                             ^
+
+ERROR:root:Error executing SQL: syntax error at or near "ac90f5b9"
+LINE 1: ... update_date = '2023-12-08 15:47:05' WHERE id = ''ac90f5b9-3...
+                                                             ^
+
+ERROR:root:Error executing SQL: syntax error at or near "id"
+LINE 1: DELETE FROM geostatistics.lpc_team WHEREa id = 'd8159cd8-83f...
+                                                  ^
+
+ERROR:root:Error executing SQL: syntax error at or near "id"
+LINE 1: DELETE FROM geostatistics.lpc_team WHEREa id = 'd8159cd8-83f...
+                                                  ^
+
+ERROR:root:Error executing SQL: syntax error at or near "id"
+LINE 1: DELETE FROM geostatistics.lpc_team WHEREa id = 'd8159cd8-83f...
+                                                  ^
+
+ERROR:root:Error executing SQL: column "first_name" of relation "crop_trial" does not exist
+LINE 1: INSERT INTO geostatistics.crop_trial (first_name, last_name,...
+                                              ^
+
+ERROR:root:Error executing SQL: column "first_name" of relation "crop_trial" does not exist
+LINE 1: INSERT INTO geostatistics.crop_trial (first_name, last_name,...
+                                              ^
+
+ERROR:root:Error executing SQL: invalid input syntax for type uuid: "2023-12-08 22:22:01"
+LINE 1: ... = '70482-877', update_date = 'QUibut' WHERE id = '2023-12-0...
+                                                             ^
+
+ERROR:root:Error executing SQL: invalid input syntax for type uuid: "2023-12-08 22:30:45"
+LINE 1: ...er_ro_cm = 'sorgo', update_date = 27.0 WHERE id = '2023-12-0...
+                                                             ^
+
+ERROR:root:Error executing SQL: column "field_name" of relation "farmer" does not exist
+LINE 1: INSERT INTO geostatistics.farmer (field_name, field_area, fi...
+                                          ^
+
+ERROR:root:Error executing SQL: column "field_name" of relation "farmer" does not exist
+LINE 1: INSERT INTO geostatistics.farmer (field_name, field_area, fi...
+                                          ^
+
+ERROR:root:Error executing SQL: column "field_name" of relation "farmer" does not exist
+LINE 1: INSERT INTO geostatistics.farmer (field_name, field_area, fi...
+                                          ^
+
+ERROR:root:Error executing SQL: invalid input syntax for type double precision: "sadasdasdas"
+LINE 1: ...ial, id_contour, create_date) VALUES ('asdasdas', 'sadasdasd...
+                                                             ^
+
+ERROR:root:Error executing SQL: invalid input syntax for type double precision: "fgfdg"
+LINE 1: ..._trial, id_contour, create_date) VALUES ('fgdfg', 'fgfdg', 0...
+                                                             ^
+
+ERROR:root:Error executing SQL: invalid input syntax for type uuid: "None"
+LINE 1: ...ETE FROM geostatistics.geostatistic_trial WHERE id = 'None';
+                                                                ^
+
+ERROR:root:Error executing SQL: invalid input syntax for type uuid: "None"
+LINE 1: ...ETE FROM geostatistics.geostatistic_trial WHERE id = 'None';
+                                                                ^
+
+ERROR:root:Error executing SQL: invalid input syntax for type double precision: "sadadasa"
+LINE 1: ...l, id_contour, create_date) VALUES ('ssdadasass', 'sadadasa'...
+                                                             ^
+
+ERROR:root:Error executing SQL: no such table: lpc_team
+ERROR:root:Error executing SQL: no such table: lpc_team
+ERROR:root:Error executing SQL: no such table: lpc_team
+ERROR:root:Error executing SQL: no such table: lpc_team
+ERROR:root:Error executing SQL: near "%": syntax error
+ERROR:root:Error executing SQL: near "%": syntax error
+ERROR:root:Error executing SQL: table lpc_team has 5 columns but 3 values were supplied
+ERROR:root:Error executing SQL: Incorrect number of bindings supplied. The current statement uses 5, and there are 3 supplied.
+ERROR:root:Error executing SQL: Incorrect number of bindings supplied. The current statement uses 5, and there are 3 supplied.
+ERROR:root:Error executing SQL: table lpc_team has 5 columns but 4 values were supplied
+ERROR:root:Error executing SQL: Incorrect number of bindings supplied. The current statement uses 3, and there are 4 supplied.
+ERROR:root:Error executing SQL: no such table: lpc_team
+ERROR:root:Error executing SQL: no such table: geostatistics.crop_trial
+ERROR:root:Error executing SQL: no such table: geostatistics.crop_trial
+ERROR:root:Error executing SQL: no such table: geostatistics.crop_trial
+ERROR:root:Error executing SQL: no such table: geostatistics.crop_trial
+ERROR:root:Error executing SQL: no such table: geostatistics.crop_trial
+ERROR:root:Error executing SQL: no such table: geostatistics.crop_trial
+ERROR:root:Error executing SQL: Incorrect number of bindings supplied. The current statement uses 6, and there are 7 supplied.
+ERROR:root:Error executing SQL: relation "lpc_team" does not exist
+LINE 1: ...st_name, last_name, create_date, update_date FROM lpc_team W...
+                                                             ^
+
+ERROR:root:Error executing SQL: relation "farmer" does not exist
+LINE 1: SELECT * FROM farmer WHERE id = '81c8fdef-7cf6-4d78-a69b-889...
+                      ^
+
+ERROR:root:Error executing SQL: relation "crop_trial" does not exist
+LINE 1: SELECT * FROM crop_trial WHERE id = '03fbe366-c21b-44cf-9d63...
+                      ^
+
+ERROR:root:Error executing SQL: relation "lpc_team" does not exist
+LINE 1: ...st_name, last_name, create_date, update_date FROM lpc_team W...
+                                                             ^
+
+ERROR:root:Error executing SQL: relation "farmer" does not exist
+LINE 1: SELECT * FROM farmer WHERE id = '81c8fdef-7cf6-4d78-a69b-889...
+                      ^
+
+ERROR:root:Error executing SQL: relation "crop_trial" does not exist
+LINE 1: SELECT * FROM crop_trial WHERE id = '03fbe366-c21b-44cf-9d63...
+                      ^
+
+ERROR:root:Error executing SQL: relation "geostatistic_trial" does not exist
+LINE 5:     geostatistic_trial gt
+            ^
+
+ERROR:root:Error executing SQL: relation "geostatistic_trial" does not exist
+LINE 5:     geostatistic_trial gt
+            ^
+
+ERROR:root:Error executing SQL: no such table: domains.yes_or_not
+ERROR:root:Error executing SQL: no such table: domains.yes_or_not
+ERROR:root:Error executing SQL: no such table: domains.yes_or_not
+ERROR:root:Error executing SQL: no such table: domains.yes_or_not
+ERROR:root:Error executing SQL: no such table: domains.yes_or_not
+ERROR:root:Error executing SQL: no such table: domains.yes_or_not
+ERROR:root:Error executing SQL: no such table: domains.yes_or_not
+ERROR:root:Error executing SQL: no such table: domains.yes_or_not
+ERROR:root:Error executing SQL: no such table: domains.yes_or_not
+ERROR:root:Error executing SQL: no such table: domains.yes_or_not
+ERROR:root:Error executing SQL: no such table: domains.yes_or_not
+ERROR:root:Error executing SQL: no such table: domains.yes_or_not
+ERROR:root:Error executing SQL: no such table: domains.yes_or_not
+ERROR:root:Error executing SQL: no such table: domains.yes_or_not
+ERROR:root:Error executing SQL: no such table: domains.yes_or_not
+ERROR:root:Error executing SQL: relation "geostatistic_trial" does not exist
+LINE 5:     geostatistic_trial gt
+            ^
+
+ERROR:root:Error executing SQL: relation "geostatistic_trial" does not exist
+LINE 1: SELECT * FROM geostatistic_trial WHERE id = '1';
+                      ^
+
+ERROR:root:Error executing SQL: relation "geostatistic_trial" does not exist
+LINE 1: SELECT * FROM geostatistic_trial WHERE id = '1';
+                      ^
+
+ERROR:root:Error executing SQL: unable to open database file

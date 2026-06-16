@@ -1,0 +1,5 @@
+ERROR:root:Error executing SQL: no such column: gt.lpc_team
+ERROR:root:checkForSavedProject: Project not saved by the user
+ERROR:root:saveVectorLayer: QgsVectorFileWriter.writeAsVectorFormatV3(): argument 1 has unexpected type 'str'
+ERROR:root:createVectorLayer: Layer is not valid.
+ERROR:root:createVectorLayer: Error creating layer world_countries -> Layer is not valid.
