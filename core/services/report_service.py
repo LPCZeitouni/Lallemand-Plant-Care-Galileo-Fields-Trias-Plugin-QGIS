@@ -2,36 +2,16 @@
 """
 LallemandGeostatFieldTrialTreatments
 
-A QGIS plugin for agronomic field trial analysis using geostatistical
-(Kriging-based) models to analyze and compare treatment scenarios.
-
----------------------------------------------------------------------
-Begin        : 2026-02-09
-Copyright    : (C) 2026 Olivier Cor
-Email        : ocor@lallemand.com
-License      : GNU General Public License v3.0 or later (GPLv3+)
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program. If not, see <https://www.gnu.org/licenses/>.
----------------------------------------------------------------------
+Report service for Word and PowerPoint generation.
 """
+
 import os.path
 import re
 
 from docx import Document
 from docx.shared import Inches
 from pptx import Presentation
-from pptx.util import Pt
+from pptx.util import Pt, Inches as PptxInches
 
 from .layer_service import LayerService
 from .message_service import MessageService
@@ -45,43 +25,42 @@ class ReportService:
 
     @staticmethod
     def paragraphReplaceText(paragraph, regex, replace_str):
-        """Return `paragraph` after replacing all matches for `regex` with `replace_str`.
-
-        `regex` is a compiled regular expression prepared with `re.compile(pattern)`
-        according to the Python library documentation for the `re` module.
         """
-        # --- a paragraph may contain more than one match, loop until all are replaced ---
+        Replace all matches for regex in a paragraph while preserving runs.
+        """
+
         while True:
             text = paragraph.text
             match = regex.search(text)
+
             if not match:
                 break
 
-            # --- when there's a match, we need to modify run.text for each run that
-            # --- contains any part of the match-string.
             runs = iter(paragraph.runs)
             start, end = match.start(), match.end()
 
-            # --- Skip over any leading runs that do not contain the match ---
             for run in runs:
                 run_len = len(run.text)
+
                 if start < run_len:
                     break
+
                 start, end = start - run_len, end - run_len
 
-            # --- Match starts somewhere in the current run. Replace match-str prefix
-            # --- occurring in this run with entire replacement str.
             run_text = run.text
             run_len = len(run_text)
-            run.text = "%s%s%s" % (run_text[:start], replace_str, run_text[end:])
-            end -= run_len  # --- note this is run-len before replacement ---
+            run.text = "%s%s%s" % (
+                run_text[:start],
+                replace_str,
+                run_text[end:]
+            )
 
-            # --- Remove any suffix of match word that occurs in following runs. Note that
-            # --- such a suffix will always begin at the first character of the run. Also
-            # --- note a suffix can span one or more entire following runs.
-            for run in runs:  # --- next and remaining runs, uses same iterator ---
+            end -= run_len
+
+            for run in runs:
                 if end <= 0:
                     break
+
                 run_text = run.text
                 run_len = len(run_text)
                 run.text = run_text[end:]
@@ -89,21 +68,59 @@ class ReportService:
 
         return paragraph
 
+    @staticmethod
+    def normalizeImagePath(imageData):
+        """
+        Normalize image data to a file path.
+
+        Supported inputs:
+            - string path
+            - list or tuple where the first item is the path
+            - None
+        """
+
+        if imageData is None:
+            return None
+
+        if isinstance(imageData, str):
+            return imageData
+
+        if isinstance(imageData, (list, tuple)):
+            if len(imageData) == 0:
+                return None
+
+            return imageData[0]
+
+        return None
+
     def addImageInParagraph(self, document, imageData, feedback):
         totalData = len(imageData)
         progressPerFeature = 100.0 / totalData if totalData else 0
 
         for placeholder, value in imageData.items():
+
             if feedback.isCanceled():
-                self.messageService.criticalMessageBar('Exporting maps', 'operation aborted by the user!')
+                self.messageService.criticalMessageBar(
+                    'Exporting maps',
+                    'operation aborted by the user!'
+                )
                 break
+
+            imagePath = self.normalizeImagePath(value)
+            imageWidth = value[1] if isinstance(value, (list, tuple)) and len(value) > 1 else 4.0
+
+            if imagePath is None or not os.path.isfile(imagePath):
+                continue
+
             regex = re.compile(placeholder)
+
             for index, paragraph in enumerate(document.paragraphs):
                 if placeholder in paragraph.text:
                     run = paragraph.add_run()
-                    run.add_picture(value[0], width=Inches(value[1]))
+                    run.add_picture(imagePath, width=Inches(imageWidth))
                     self.paragraphReplaceText(paragraph, regex, '')
                     feedback.setProgress(int(index * progressPerFeature))
+
         feedback.setProgress(100)
 
     def addImageInTable(self, document, imageData, feedback):
@@ -111,19 +128,32 @@ class ReportService:
         progressPerFeature = 100.0 / totalData if totalData else 0
 
         for placeholder, value in imageData.items():
+
             if feedback.isCanceled():
-                self.messageService.criticalMessageBar('Exporting maps', 'operation aborted by the user!')
+                self.messageService.criticalMessageBar(
+                    'Exporting maps',
+                    'operation aborted by the user!'
+                )
                 break
+
+            imagePath = self.normalizeImagePath(value)
+            imageWidth = value[1] if isinstance(value, (list, tuple)) and len(value) > 1 else 4.0
+
+            if imagePath is None or not os.path.isfile(imagePath):
+                continue
+
             regex = re.compile(placeholder)
+
             for index, table in enumerate(document.tables):
                 for row in table.rows:
                     for cell in row.cells:
                         for cellIndex, paragraph in enumerate(cell.paragraphs):
                             if placeholder in paragraph.text:
                                 run = paragraph.add_run()
-                                run.add_picture(value[0], width=Inches(value[1]))
+                                run.add_picture(imagePath, width=Inches(imageWidth))
                                 self.paragraphReplaceText(paragraph, regex, '')
                                 feedback.setProgress(int(index * progressPerFeature))
+
         feedback.setProgress(100)
 
     def fillPlaceholdersOnParagraphs(self, document, trialData, feedback):
@@ -131,12 +161,18 @@ class ReportService:
         progressPerFeature = 100.0 / totalData if totalData else 0
 
         for field, value in trialData.items():
+
             if feedback.isCanceled():
-                self.messageService.criticalMessageBar('Exporting maps', 'operation aborted by the user!')
+                self.messageService.criticalMessageBar(
+                    'Exporting maps',
+                    'operation aborted by the user!'
+                )
                 break
+
             regex = re.compile(field)
+
             for index, paragraph in enumerate(document.paragraphs):
-                self.paragraphReplaceText(paragraph, regex, value)
+                self.paragraphReplaceText(paragraph, regex, str(value))
                 feedback.setProgress(int(index * progressPerFeature))
 
         feedback.setProgress(100)
@@ -146,62 +182,163 @@ class ReportService:
         progressPerFeature = 100.0 / totalData if totalData else 0
 
         for cellField, value in tableData.items():
+
             if feedback.isCanceled():
-                self.messageService.criticalMessageBar('Exporting maps', 'operation aborted by the user!')
+                self.messageService.criticalMessageBar(
+                    'Exporting maps',
+                    'operation aborted by the user!'
+                )
                 break
+
             cellRegex = re.compile(cellField)
+
             for index, table in enumerate(document.tables):
                 for row in table.rows:
                     for cell in row.cells:
                         for cellIndex, paragraph in enumerate(cell.paragraphs):
-                            self.paragraphReplaceText(paragraph, cellRegex, value)
+                            self.paragraphReplaceText(
+                                paragraph,
+                                cellRegex,
+                                str(value)
+                            )
                             feedback.setProgress(int(cellIndex * progressPerFeature))
+
         feedback.setProgress(100)
 
+    def appendControlScaleNoteToWord(self, document, paragraphData):
+        """
+        Add the control-scale note at the end of the Word report.
+
+        If the template already contains {CONTROL_SCALE_NOTE}, it will also
+        be replaced by fillPlaceholdersOnParagraphs().
+        """
+
+        note = paragraphData.get('{CONTROL_SCALE_NOTE}', None)
+
+        if note:
+            paragraph = document.add_paragraph()
+            run = paragraph.add_run(str(note))
+            run.bold = True
+
     def createWordReport(self, paragraphData, tableData, imageData, filePath, feedback):
-        doc = os.path.join(self.layerService.getReportPath(), 'report_template.docx')
+        doc = os.path.join(
+            self.layerService.getReportPath(),
+            'report_template.docx'
+        )
+
         reportDocument = Document(doc)
 
         self.fillPlaceholdersOnParagraphs(reportDocument, paragraphData, feedback)
         self.fillPlaceholdersOnTable(reportDocument, tableData, feedback)
         self.addImageInParagraph(reportDocument, imageData, feedback)
         self.addImageInTable(reportDocument, imageData, feedback)
+        self.appendControlScaleNoteToWord(reportDocument, paragraphData)
 
         output = os.path.join(filePath, 'output_report.docx')
         reportDocument.save(output)
 
     def createPresentation(self, presentationData, filePath):
-        print(presentationData)
-        doc = os.path.join(self.layerService.getPresentationPath(), 'presentation_template.pptx')
+        doc = os.path.join(
+            self.layerService.getPresentationPath(),
+            'presentation_template.pptx'
+        )
+
         reportPresentation = Presentation(doc)
+
+        controlScaleNote = presentationData.get(
+            '_CONTROL_SCALE_NOTE',
+            None
+        )
+
         for slideIndex, slide in enumerate(reportPresentation.slides, start=1):
 
             for dataIndex, data in presentationData.items():
+
+                if not isinstance(dataIndex, int):
+                    continue
+
                 if slideIndex == dataIndex:
+
                     for placeholderIndex, placeholderData in data.items():
+
                         if placeholderIndex == 1:
-                            self.changeTextPlaceholder(slide, placeholderIndex, placeholderData, 36)
+                            self.changeTextPlaceholder(
+                                slide,
+                                placeholderIndex,
+                                placeholderData,
+                                36
+                            )
+
                         elif placeholderIndex == 15:
-                            self.changeTextPlaceholder(slide, placeholderIndex, placeholderData, 18)
+                            self.changeTextPlaceholder(
+                                slide,
+                                placeholderIndex,
+                                placeholderData,
+                                18
+                            )
+
                         else:
-                            placeholder = slide.placeholders[placeholderIndex]
-                            if placeholderData is None:
+                            imagePath = self.normalizeImagePath(placeholderData)
+
+                            if imagePath is None:
                                 continue
-                            if os.path.isfile(placeholderData):
-                                try:
-                                    placeholder.insert_picture(placeholderData)
-                                except Exception as e:
-                                    print(f"Error inserting picture: {e}")
-                            else:
-                                print(f"Invalid file path for image: {placeholderData}")
+
+                            if not os.path.isfile(imagePath):
+                                print(f"Invalid file path for image: {imagePath}")
+                                continue
+
+                            try:
+                                placeholder = slide.placeholders[placeholderIndex]
+                                placeholder.insert_picture(imagePath)
+
+                            except Exception as exception:
+                                print(f"Error inserting picture: {exception}")
+
+            if controlScaleNote and slideIndex in [5, 6, 7]:
+                self.addControlScaleNoteToSlide(slide, controlScaleNote)
 
         output = os.path.join(filePath, 'output_presentation.pptx')
         reportPresentation.save(output)
 
+    def addControlScaleNoteToSlide(self, slide, text):
+        """
+        Add a small note to PowerPoint slides explaining the reference scale.
+
+        The note is added only to the slides where final surfaces are displayed.
+        """
+
+        try:
+            left = PptxInches(0.45)
+            top = PptxInches(6.85)
+            width = PptxInches(8.5)
+            height = PptxInches(0.35)
+
+            textbox = slide.shapes.add_textbox(left, top, width, height)
+            textFrame = textbox.text_frame
+            textFrame.clear()
+
+            paragraph = textFrame.paragraphs[0]
+            run = paragraph.add_run()
+            run.text = text
+
+            font = run.font
+            font.name = 'Times New Roman'
+            font.size = Pt(11)
+            font.bold = True
+
+        except Exception as exception:
+            print(f"Error adding control scale note: {exception}")
+
     def changeTextPlaceholder(self, slide, placeholderIndex, text, size):
         for shape in slide.placeholders:
             if shape.placeholder_format.idx == placeholderIndex:
-                self.textFormatting(shape, text, size, bold=True, italic=False)
+                self.textFormatting(
+                    shape,
+                    text,
+                    size,
+                    bold=True,
+                    italic=False
+                )
 
     def textFormatting(self, shape, text, size, bold=False, italic=False):
         text_frame = shape.text_frame
@@ -209,8 +346,14 @@ class ReportService:
 
         paragraph = text_frame.paragraphs[0]
         run = paragraph.add_run()
-        run.text = text
-        self.fontFormatting(run, size, bold=bold, italic=italic)
+        run.text = str(text)
+
+        self.fontFormatting(
+            run,
+            size,
+            bold=bold,
+            italic=italic
+        )
 
     @staticmethod
     def fontFormatting(run, size, bold=False, italic=False):
@@ -221,19 +364,25 @@ class ReportService:
         font.italic = italic
 
     def iterate_over_slides(self):
-        doc = os.path.join(self.layerService.getPresentationPath(), 'presentation_template.pptx')
+        doc = os.path.join(
+            self.layerService.getPresentationPath(),
+            'presentation_template.pptx'
+        )
+
         reportPresentation = Presentation(doc)
+
         for i, slide in enumerate(reportPresentation.slides, start=1):
             print(f"Slide {i}")
 
-            # Access slide properties and elements
             for shape in slide.shapes:
                 print(f"  Shape: {shape.name}")
 
-            # Access specific elements (e.g., title, text boxes)
             if slide.shapes.title:
                 print(f"  Title: {slide.shapes.title.text}")
 
             for placeholder in slide.placeholders:
                 if placeholder.has_text_frame:
-                    print(f"  Placeholder {placeholder.placeholder_format.idx}: {placeholder.text}")
+                    print(
+                        f"  Placeholder {placeholder.placeholder_format.idx}: "
+                        f"{placeholder.text}"
+                    )
